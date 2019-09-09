@@ -35,7 +35,7 @@ def stocks(request):
             current_stock.current_price = current_price
             current_stock.save()
 
-            time.sleep(random.randint(10, 20))
+            time.sleep(random.randint(1, 3))
         send_mail(
             'Stock Price Report',
             body,

@@ -94,12 +94,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 # Heroku: Update database configuration from $DATABASE_URL.
 
-
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
-
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
