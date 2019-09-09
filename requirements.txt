@@ -9,6 +9,7 @@ django-widget-tweaks==1.4.5
 gunicorn==19.9.0
 idna==2.8
 psycopg2==2.8.3
+python-dotenv==0.10.3
 pytz==2019.2
 requests==2.22.0
 soupsieve==1.9.3
