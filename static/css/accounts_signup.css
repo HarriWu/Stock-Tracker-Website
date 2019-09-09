@@ -1,0 +1,80 @@
+.initial {
+  padding: 40px;
+  width: 150px;
+  height: 80%;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 40%;
+}
+
+.initial a {
+  float: 5%;
+  width: 40%;
+  height: 50%;
+  font-size: 100%;
+  text-decoration: none;
+  color: blue;
+  list-style-type: none;
+}
+
+.initial p {
+  width: 150px;
+  height: 50%;
+  font-size: 100%;
+  text-decoration: none;
+  color: white;
+  list-style-type: none;
+}
+
+.initial a:hover {
+    background-color: white;
+    color: black;
+}
+
+body {
+    background-image: url('/static/img/art-artistic-background-1020315.jpg');
+    background-attachment: fixed;
+}
+
+.initiali {
+  padding: 40px;
+  text-align: center;
+}
+
+.initiali a {
+  float: 5%;
+  width: 60%;
+  height: 50%;
+  font-size: 100%;
+  text-decoration: none;
+  color: blue;
+  list-style-type: none;
+  margin-left: 40%;
+
+}
+
+.initiali p {
+  width: 150px;
+  height: 50%;
+  font-size: 100%;
+  text-decoration: none;
+  color: white;
+  list-style-type: none;
+  margin-left: 43.5%;
+}
+
+.initiali a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+ul {
+  width: 400px;
+  margin-left: 30%;
+  height: 50%;
+  font-size: 100%;
+  text-decoration: none;
+  color: red;
+  list-style-type: none;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/accounts_signup.css' %}">
+</head>
+<body>
+    <div class="initial">
+        <p>
+            <form method="post" novalidate>
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="submit" value="Login">
+            </form>
+        </p>
+        <p>
+            New to Stock Price Tracker? <a href="{% url 'signup' %}">Sign up</a>
+        </p>
+        <p>
+            <a href="#">Forgot your password?</a>
+        </p>
+    </div>
+</body>
+</html>

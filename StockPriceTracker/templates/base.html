@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <div class="navbar">
+      <a href="{% url 'home' %}">{{ user.username }}</a>
+      <a href="{% url 'stocks' %}">Stock Tracker</a>
+      <a href="{% url 'info' %}">User Profile</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+  {% else %}
+    <center>
+      <div class=initial>
+
+        <p>
+          <a href="{% url 'signup' %}">Sign up</a>
+        </p>
+        <p>
+          <a href="{% url 'login' %}">Log in</a>
+        </p>
+
+      </div>
+    </center>
+  {% endif %}
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

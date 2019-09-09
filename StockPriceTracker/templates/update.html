@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update or Delete</title>
+    {% extends 'base.html' %}
+</head>
+<body>
+    {% block content %}
+        <div class="container">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" name="update">Update Stock Info</button>
+                <button type="submit" name="delete">Delete Stock Info</button>
+            </form>
+
+            {% if message %}
+                <p>
+                    {{ message }}
+                </p>
+            {% endif %}
+        </div>
+
+        <div class="stable">
+            <tbody>
+                <table>
+                  <tr>
+                    <th>NASDAQ Symbol |</th>
+                    <th>Your Set Price |</th>
+                    <th>Current Price |</th>
+                    <th>Should you Purchase? </th>
+                  </tr>
+                {% for i in stocks %}
+                      <tr>
+                        <td class="stable">{{ i.0 }}</td>
+                        <td class="stable">{{ i.1 }}</td>
+                        <td class="stable">{{ i.2 }}</td>
+                        <td class="stable">{{ i.3 }}</td>
+                {% endfor %}
+                </table>
+            </tbody>
+        </div>
+    {% endblock %}
+
+</body>
+</html>

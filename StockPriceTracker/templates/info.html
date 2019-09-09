@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+    {% extends 'base.html' %}}
+</head>
+<body>
+{% block content %}
+    <div class="container">
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+    </div>
+        {% for i in ret_info %}
+        <p class="white_text">
+            gmail address: {{ i.0 }}
+        </p>
+        <p class="white_text">
+            User-Agent: {{ i.1 }}
+        </p>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Stock Tracker</title>
+    {% extends 'base.html' %}
+</head>
+<body>
+    {% block content %}
+        <div class="container">
+            <p>
+                Note: In order to run application, user info needs to contain a valid gmail address and password
+                along with a user agent that you can get by google searching 'my user agent'
+            </p>
+
+            {% if error %}
+                <p>
+                    {{ error }}
+                </p>
+            {% endif %}
+
+            <p>
+                {{ body }}
+            </p>
+
+            {% if message %}
+                <p>
+                    {{ message }}
+                    <a href="{% url 'update' %}">
+                        Update Stock Info
+                    </a>
+                </p>
+            {% endif %}
+
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="New Entry">
+            </form>
+            <form method="post" onsubmit="script" novalidate>
+                {% csrf_token %}
+                <button type="submit" name="run-process">Run Evaluation</button>
+            </form>
+            <p>
+                <a href="{% url 'update' %}">
+                    Update Saved Stock Info
+                </a>
+            </p>
+        </div>
+        <div class="stable">
+            <tbody>
+                <table>
+                  <tr>
+                    <th>NASDAQ Symbol |</th>
+                    <th>Your Set Price |</th>
+                    <th>Current Price |</th>
+                    <th>Should you Purchase? </th>
+                  </tr>
+                {% for i in stocks %}
+                      <tr>
+                        <td class="stable">{{ i.0 }}</td>
+                        <td class="stable">{{ i.1 }}</td>
+                        <td class="stable">{{ i.2 }}</td>
+                        <td class="stable">{{ i.3 }}</td>
+                {% endfor %}
+                </table>
+            </tbody>
+        </div>
+
+    {% endblock %}
+
+</body>
+</html>
